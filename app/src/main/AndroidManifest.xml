@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.appcarlbanl">
 
     <uses-permission android:name="android.permission.NFC"/>
-    <uses-feature android:name="android.hardware.nfc" android:required="true"/>
+    <uses-feature android:name="android.hardware.nfc" android:required="false"/>
 
     <application
         android:allowBackup="true"
@@ -16,24 +17,31 @@
         android:theme="@style/Theme.AppCarlBanl"
         tools:targetApi="31">
 
-    <activity android:name=".MainActivity"
-        android:exported="true"
-        tools:ignore="MissingClass,WrongManifestParent">
+        <activity android:name="com.example.appcarlbanl.MainActivity"
+            android:exported="true"
+            tools:ignore="MissingClass,WrongManifestParent">
 
-        <intent-filter>
-            <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
-            <category android:name="android.intent.category.DEFAULT"/>
-            <data android:mimeType="text/plain"/>
-        </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
 
-        <meta-data
-            android:name="android.nfc.tech_filter"
-            android:resource="@xml/nfc_tech_list"/>
-    </activity>
+        </activity>
 
-        </application>
+        <!-- Intent Filter specific for NFC, If the NFC is not separated in this way, the app does not start  -->
+        <activity android:name="com.example.appcarlbanl.NfcActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
 
+            <meta-data
+                android:name="android.nfc.tech_filter"
+                android:resource="@xml/nfc_tech_list"/>
+        </activity>
 
-
+    </application>
 
 </manifest>
