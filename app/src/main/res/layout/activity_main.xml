@@ -2,15 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9FD5D2"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="20dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_launcher_foreground"
-        android:backgroundTint="#9E0C0C"
-        android:foregroundTint="#FFF0F0"
-        android:text="@string/hola_nfc"
-        android:textColor="#0007A2" />
+        android:hint="Escribe el nombre aquí"/>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar en NFC"/>
+
+    <EditText
+        android:id="@+id/editTextRead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre leído de NFC"
+        android:focusable="false"/>
+
 </LinearLayout>
