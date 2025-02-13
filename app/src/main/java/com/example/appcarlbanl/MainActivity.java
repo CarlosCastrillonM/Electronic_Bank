@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-        // Intent para detectar NFC
+        // Intent for detect NFC
         pendingIntent = PendingIntent.getActivity(this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), PendingIntent.FLAG_MUTABLE);
         IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
         intentFiltersArray = new IntentFilter[]{tagDetected};
