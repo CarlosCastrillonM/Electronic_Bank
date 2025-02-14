@@ -1,27 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="198dp"
+        android:visibility="visible"
+        app:cardBackgroundColor="#613EDB"
+        app:cardCornerRadius="30dp">
+
+        <FrameLayout
+            android:layout_width="120dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="150dp">
+
+            <EditText
+                android:id="@+id/editDinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:fontFamily="monospace"
+                android:hint="Saldo"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textSize="14sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="100dp">
+
+            <EditText
+                android:id="@+id/numbersCreditCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:breakStrategy="simple"
+                android:focusable="false"
+                android:fontFamily="monospace"
+                android:hint="XXXX XXXX XXXX XXXX"
+                android:inputType="text"
+                android:selectAllOnFocus="false"
+                android:singleLine="false"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textColorHighlight="#14FFFFFF"
+                android:textColorHint="#000000"
+                android:textColorLink="#00FFFFFF"
+                android:textSize="20sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="71dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/chip_card" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="173dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="150dp">
+
+            <EditText
+                android:id="@+id/nameUserCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:breakStrategy="simple"
+                android:focusable="false"
+                android:fontFamily="monospace"
+                android:hint="Nombre Propietario"
+                android:inputType="text"
+                android:selectAllOnFocus="false"
+                android:singleLine="false"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textColorHighlight="#14FFFFFF"
+                android:textColorHint="#000000"
+                android:textColorLink="#00FFFFFF"
+                android:textSize="14sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="210dp"
+            android:layout_marginTop="150dp">
+
+            <TextView
+                android:id="@+id/symbolDollar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHighlight="#000000"
+                android:textColorHint="#000000"
+                android:textColorLink="#000000"
+                android:textSize="16sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="53dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/logocarlbank" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="91dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="42dp">
+
+            <TextView
+                android:id="@+id/entityName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="CarlBank"
+                android:textAlignment="textStart" />
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Escribe el nombre aquí"/>
+        android:hint="Escribe el nombre aquí" />
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guardar en NFC"/>
+        android:background="#E7D3D3"
+        android:text="Guardar en NFC" />
 
     <EditText
         android:id="@+id/editTextRead"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre leído de NFC"
-        android:focusable="false"/>
+        android:focusable="false"
+        android:hint="Nombre leído de NFC" />
 
 </LinearLayout>
