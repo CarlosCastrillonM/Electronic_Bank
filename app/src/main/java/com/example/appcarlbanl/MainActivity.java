@@ -16,9 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
-import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -120,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 byte[] payload = record.getPayload();
 
                 // Solution: Skip the first byte (language size)
-                int languageCodeLength = payload[0] & 0x3F; // Extraer el tamaño del idioma (primeros 6 bits)
+                int languageCodeLength = payload[0] & 0x3F; // Extract language size
                 String textRead = new String(payload, languageCodeLength + 1, payload.length - languageCodeLength - 1, Charset.forName("UTF-8"));
 
                 // Show read content
