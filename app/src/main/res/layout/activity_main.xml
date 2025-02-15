@@ -21,12 +21,13 @@
             android:layout_marginTop="150dp">
 
             <EditText
-                android:id="@+id/editDinner"
+                android:id="@+id/balanceCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:fontFamily="monospace"
                 android:hint="Saldo"
+                android:inputType="number"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textColorHint="#000000"
@@ -152,11 +153,48 @@
         android:layout_width="match_parent"
         android:layout_height="50dp" />
 
-    <EditText
-        android:id="@+id/editTextName"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Escribe el nombre aquí" />
+        android:layout_height="218dp">
+
+        <RadioGroup
+            android:id="@+id/rGroupButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/rButtonAddBalance"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rButtonAddBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:text="Añadir Saldo" />
+
+            <RadioButton
+                android:id="@+id/rButtonReduceBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Reducir Saldo" />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/editCardBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:background="#00FFFFFF"
+            android:inputType="number"
+            android:hint="Digite el saldo"
+            android:textAlignment="center" />
+
+    </FrameLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
 
     <Button
         android:id="@+id/btnSave"
